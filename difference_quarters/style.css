@@ -1,0 +1,29 @@
+body {
+  overflow: hidden;
+  background: #000;
+}
+
+.arc {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -20vmin;
+  border: solid 1em transparent;
+  border-top-color: #fff;
+  padding: 20vmin;
+  border-radius: 50%;
+  --rot: rotate(calc(var(--k) * 1turn));
+  mix-blend-mode: exclusion;
+  animation: a 1s ease-in-out calc(var(--k) * -1s) infinite alternate;
+}
+
+@keyframes a {
+  0%,
+  12.5% {
+    transform: var(--rot);
+  }
+  87.5%,
+  100% {
+    transform: var(--rot) translateY(calc(50% - 0.5em));
+  }
+}
